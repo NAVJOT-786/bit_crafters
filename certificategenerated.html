@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <style>
+        /* Certificate content styles */
+         body {
+            border: 5px solid #000;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Certificate content styles */
+        h1 {
+            font-size: 50px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+P{
+Font-size: 30px;
+}
+
+        h3 {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Certificate of Achievement</h1>
+    <p>This is to certify that</p>
+    <h2 id="certificateName"></h2>
+    <p>Has achieved</p>
+    <h3 id="certificateAchievement"></h3>
+    <p>On 23rd September  <?php echo new Date().toLocaleDateString(); ?></p>
+
+    <script>
+        // Retrieve query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const studentName = urlParams.get("name");
+        const achievement = urlParams.get("achievement");
+
+        // Update the certificate content
+        document.getElementById("certificateName").textContent = studentName;
+        document.getElementById("certificateAchievement").textContent = achievement;
+    </script>
+</body>
+</html>
